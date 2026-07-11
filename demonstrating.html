@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>GET and POST Methods</title>
+
+    <!-- CSS -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f4f8;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            color: darkblue;
+            margin-top: 30px;
+        }
+
+        .description {
+            text-align: center;
+            color: #555;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+
+        .form-box {
+            background-color: white;
+            width: 320px;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px gray;
+        }
+
+        .form-box h2 {
+            text-align: center;
+            color: darkblue;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input {
+            width: 95%;
+            padding: 10px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            border: 1px solid gray;
+            border-radius: 5px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: darkblue;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: blue;
+        }
+
+        .info {
+            text-align: center;
+            margin-top: 15px;
+            color: #555;
+        }
+
+        #result {
+            width: 500px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 0 10px gray;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Demonstrating GET and POST Methods</h1>
+
+    <p class="description">
+        Using HTML Forms, CSS and JavaScript
+    </p>
+
+    <div class="container">
+
+        <!-- GET METHOD FORM -->
+        <div class="form-box">
+
+            <h2>GET Method</h2>
+
+            <form method="GET" action="">
+
+                <label>Enter Name:</label>
+                <input
+                    type="text"
+                    name="name"
+                    placeholder="Enter your name"
+                    required
+                >
+
+                <label>Enter Email:</label>
+                <input
+                    type="email"
+                    name="email"
+                    placeholder="Enter your email"
+                    required
+                >
+
+                <button type="submit">
+                    Submit using GET
+                </button>
+
+            </form>
+
+            <p class="info">
+                GET method displays the submitted data in the URL.
+            </p>
+
+        </div>
+
+
+        <!-- POST METHOD FORM -->
+        <div class="form-box">
+
+            <h2>POST Method</h2>
+
+            <form onsubmit="submitPost(event)">
+
+                <label>Enter Name:</label>
+                <input
+                    type="text"
+                    id="postName"
+                    placeholder="Enter your name"
+                    required
+                >
+
+                <label>Enter Email:</label>
+                <input
+                    type="email"
+                    id="postEmail"
+                    placeholder="Enter your email"
+                    required
+                >
+
+                <button type="submit">
+                    Submit using POST
+                </button>
+
+            </form>
+
+            <p class="info">
+                POST method does not display the submitted data in the URL.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- RESULT AREA -->
+    <div id="result">
+
+        <h2>POST Data Submitted Successfully</h2>
+
+        <p id="resultName"></p>
+
+        <p id="resultEmail"></p>
+
+        <p>
+            Observe the URL: The submitted data is not visible.
+        </p>
+
+    </div>
+
+
+    <!-- JAVASCRIPT -->
+    <script>
+
+        function submitPost(event) {
+
+            // Prevent page from refreshing
+            event.preventDefault();
+
+            // Get values from the form
+            var name =
+                document.getElementById("postName").value;
+
+            var email =
+                document.getElementById("postEmail").value;
+
+            // Display the result
+            document.getElementById("resultName").innerHTML =
+                "<b>Name:</b> " + name;
+
+            document.getElementById("resultEmail").innerHTML =
+                "<b>Email:</b> " + email;
+
+            // Show result box
+            document.getElementById("result").style.display =
+                "block";
+
+            // Show alert
+            alert(
+                "POST Method: Data submitted without changing the URL"
+            );
+        }
+
+    </script>
+
+</body>
+</html>
