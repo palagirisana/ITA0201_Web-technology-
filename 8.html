@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Images, Hyperlinks and Iframes</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            min-height: 100vh;
+        }
+
+        header {
+            text-align: center;
+            color: white;
+            padding: 40px 20px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 38px;
+        }
+
+        header p {
+            font-size: 18px;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1000px;
+            margin: 0 auto 50px;
+        }
+
+        .card {
+            background-color: white;
+            padding: 30px;
+            margin-bottom: 25px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px
+                        rgba(0, 0, 0, 0.25);
+            text-align: center;
+        }
+
+        h2 {
+            color: #5b4bc4;
+        }
+
+        .sample-image {
+            width: 400px;
+            height: 250px;
+            max-width: 100%;
+            object-fit: cover;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px
+                        rgba(0, 0, 0, 0.3);
+        }
+
+        .link-button {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 13px 30px;
+            background: linear-gradient(
+                135deg,
+                #667eea,
+                #764ba2
+            );
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+        }
+
+        .link-button:hover {
+            transform: scale(1.05);
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: 3px solid #667eea;
+            border-radius: 15px;
+        }
+
+        button {
+            padding: 13px 30px;
+            background-color: #5b4bc4;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #764ba2;
+        }
+
+        #message {
+            margin-top: 20px;
+            color: green;
+            font-weight: bold;
+        }
+
+        footer {
+            text-align: center;
+            color: white;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+
+<body>
+
+    <header>
+        <h1>Explore the Web</h1>
+
+        <p>
+            Demonstrating Images, Hyperlinks and Iframes
+        </p>
+    </header>
+
+
+    <div class="container">
+
+        <!-- IMAGE SECTION -->
+        <div class="card">
+
+            <h2>Image Tag</h2>
+
+            <p>
+                The image below is displayed using
+                the HTML image tag.
+            </p>
+
+            <img
+                class="sample-image"
+                src="https://picsum.photos/600/400"
+                width="400"
+                height="250"
+                alt="Beautiful sample landscape image"
+            >
+
+        </div>
+
+
+        <!-- HYPERLINK SECTION -->
+        <div class="card">
+
+            <h2>Hyperlink</h2>
+
+            <p>
+                Click the button below to visit Google.
+            </p>
+
+            <a
+                class="link-button"
+                href="https://www.google.com"
+                target="_blank">
+
+                Visit Google
+
+            </a>
+
+        </div>
+
+
+        <!-- IFRAME SECTION -->
+        <div class="card">
+
+            <h2>External Webpage Using Iframe</h2>
+
+            <p>
+                The webpage below is embedded using
+                an iframe.
+            </p>
+
+            <iframe
+                src="https://www.example.com"
+                width="800"
+                height="400"
+                title="External Example Webpage">
+            </iframe>
+
+        </div>
+
+
+        <!-- JAVASCRIPT SECTION -->
+        <div class="card">
+
+            <h2>JavaScript Interaction</h2>
+
+            <button onclick="showMessage()">
+                Click Me
+            </button>
+
+            <p id="message"></p>
+
+        </div>
+
+    </div>
+
+
+    <footer>
+        <p>
+            Created using HTML | CSS | JavaScript
+        </p>
+    </footer>
+
+
+    <script>
+        function showMessage() {
+
+            document.getElementById("message").innerHTML =
+                "Webpage elements are working successfully!";
+
+        }
+    </script>
+
+</body>
+
+</html>
