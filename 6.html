@@ -1,0 +1,250 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <title>Beautiful XHTML Web Page</title>
+
+    <style type="text/css">
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            min-height: 100vh;
+        }
+
+        .header {
+            text-align: center;
+            color: white;
+            padding: 35px;
+        }
+
+        .header h1 {
+            font-size: 36px;
+            margin: 0;
+        }
+
+        .header p {
+            font-size: 17px;
+        }
+
+        .container {
+            width: 500px;
+            margin: 10px auto 50px auto;
+            padding: 35px;
+            background-color: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            text-align: center;
+        }
+
+        .icon {
+            font-size: 50px;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            color: #5b4bc4;
+        }
+
+        .description {
+            color: #666666;
+            line-height: 1.6;
+        }
+
+        .input-box {
+            margin-top: 25px;
+            text-align: left;
+        }
+
+        label {
+            display: block;
+            color: #333333;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        input {
+            width: 100%;
+            padding: 13px;
+            border: 2px solid #dddddd;
+            border-radius: 8px;
+            font-size: 16px;
+            outline: none;
+        }
+
+        input:focus {
+            border-color: #667eea;
+        }
+
+        button {
+            width: 100%;
+            margin-top: 25px;
+            padding: 14px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 17px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            transform: scale(1.03);
+        }
+
+        #result {
+            display: none;
+            margin-top: 25px;
+            padding: 15px;
+            background-color: #e8f5e9;
+            color: #2e7d32;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+
+        .rules {
+            margin-top: 30px;
+            padding: 15px;
+            background-color: #f5f3ff;
+            border-radius: 10px;
+            text-align: left;
+        }
+
+        .rules h3 {
+            color: #5b4bc4;
+            text-align: center;
+        }
+
+        .rules ul {
+            line-height: 1.8;
+            color: #555555;
+        }
+
+        .footer {
+            text-align: center;
+            color: white;
+            padding: 15px;
+        }
+
+    </style>
+
+
+    <script type="text/javascript">
+
+        function showMessage() {
+
+            var name =
+                document.getElementById("username").value;
+
+            var result =
+                document.getElementById("result");
+
+            if (name == "") {
+
+                alert("Please enter your name!");
+
+            } else {
+
+                result.style.display = "block";
+
+                result.innerHTML =
+                    "Welcome, " + name +
+                    "! Your XHTML page is working successfully!";
+
+            }
+        }
+
+    </script>
+
+</head>
+
+
+<body>
+
+    <div class="header">
+
+        <h1>XHTML Web Experience</h1>
+
+        <p>
+            A modern webpage created using XHTML,
+            CSS and JavaScript
+        </p>
+
+    </div>
+
+
+    <div class="container">
+
+        <div class="icon">🌐</div>
+
+        <h2>Welcome to My Web Page</h2>
+
+        <p class="description">
+            This attractive webpage demonstrates the rules
+            and features of an XHTML-compliant document.
+        </p>
+
+
+        <div class="input-box">
+
+            <label for="username">
+                Enter Your Name
+            </label>
+
+            <input
+                type="text"
+                id="username"
+                name="username"
+                placeholder="Type your name here"
+            />
+
+        </div>
+
+
+        <button
+            type="button"
+            onclick="showMessage()">
+            Explore Now
+        </button>
+
+
+        <div id="result"></div>
+
+
+        <div class="rules">
+
+            <h3>XHTML Rules Followed</h3>
+
+            <ul>
+                <li>All tags are written in lowercase.</li>
+                <li>All tags are properly closed.</li>
+                <li>All attributes are quoted.</li>
+                <li>Elements are properly nested.</li>
+                <li>Empty tags are self-closing.</li>
+            </ul>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer">
+
+        <p>
+            Created using XHTML | CSS | JavaScript
+        </p>
+
+    </div>
+
+</body>
+
+</html>
