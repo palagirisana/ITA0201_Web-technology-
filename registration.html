@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Registration</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+        }
+
+        nav {
+            background: #162447;
+            text-align: center;
+            padding: 15px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 15px;
+        }
+
+        .form-box {
+            width: 450px;
+            max-width: 90%;
+            margin: 40px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #1e3c72;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0 15px;
+            box-sizing: border-box;
+        }
+
+        button {
+            width: 100%;
+            padding: 13px;
+            background: #1e3c72;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        #message {
+            text-align: center;
+            color: green;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="courses.html">Courses</a>
+    <a href="registration.html">Registration</a>
+    <a href="contact.html">Contact</a>
+</nav>
+
+<div class="form-box">
+
+    <h2>Student Registration</h2>
+
+    <form onsubmit="registerStudent(event)">
+
+        <label>Full Name</label>
+        <input type="text" required>
+
+        <label>Email</label>
+        <input type="email" required>
+
+        <label>Course</label>
+        <select required>
+            <option value="">Select Course</option>
+            <option>Information Technology</option>
+            <option>Computer Science</option>
+            <option>Artificial Intelligence</option>
+        </select>
+
+        <label>Address</label>
+        <textarea rows="4"></textarea>
+
+        <button type="submit">Register Now</button>
+
+    </form>
+
+    <p id="message"></p>
+
+</div>
+
+<script>
+    function registerStudent(event) {
+        event.preventDefault();
+
+        document.getElementById("message").innerHTML =
+            "Registration completed successfully!";
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Internet Protocol Observation</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #141e30, #243b55);
+            color: white;
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        header h1 {
+            font-size: 38px;
+            margin-bottom: 10px;
+        }
+
+        .container {
+            width: 85%;
+            max-width: 900px;
+            margin: auto;
+            background-color: white;
+            color: #333;
+            padding: 35px;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .image-box {
+            text-align: center;
+            margin: 25px 0;
+        }
+
+        .image-box img {
+            width: 500px;
+            max-width: 100%;
+            height: 280px;
+            object-fit: cover;
+            border-radius: 15px;
+        }
+
+        .info {
+            background-color: #eef3ff;
+            padding: 20px;
+            border-radius: 12px;
+            margin-top: 20px;
+        }
+
+        button {
+            display: block;
+            margin: 25px auto;
+            padding: 14px 30px;
+            background-color: #243b55;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #4568dc;
+        }
+
+        #message {
+            text-align: center;
+            color: green;
+            font-weight: bold;
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px;
+        }
+    </style>
+</head>
+
+
+<body>
+
+    <header>
+        <h1>Internet Protocol Observation</h1>
+        <p>Using Browser Developer Tools</p>
+    </header>
+
+
+    <div class="container">
+
+        <h2>Network Request Demonstration</h2>
+
+        <p>
+            This webpage can be used to observe network
+            requests using the browser Developer Tools.
+        </p>
+
+
+        <div class="image-box">
+
+            <!-- External resource creates a network request -->
+            <img
+                src="https://picsum.photos/600/400"
+                alt="Sample network resource"
+                width="500"
+                height="280"
+            >
+
+        </div>
+
+
+        <div class="info">
+
+            <h3>Details to Observe</h3>
+
+            <p>✓ URL</p>
+            <p>✓ Protocol</p>
+            <p>✓ Request Method</p>
+            <p>✓ Status Code</p>
+            <p>✓ File Type</p>
+            <p>✓ Size</p>
+            <p>✓ Loading Time</p>
+
+        </div>
+
+
+        <button onclick="showMessage()">
+            Test JavaScript
+        </button>
+
+        <p id="message"></p>
+
+    </div>
+
+
+    <footer>
+        <p>
+            HTML | CSS | JavaScript | Network Analysis
+        </p>
+    </footer>
+
+
+    <script>
+        function showMessage() {
+
+            document.getElementById("message").innerHTML =
+                "JavaScript executed successfully!";
+
+        }
+    </script>
+
+</body>
+
+</html>
