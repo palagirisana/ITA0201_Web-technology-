@@ -1,0 +1,21 @@
+body {
+    text-align: center;
+    font-family: Arial;
+    background: #f2f2f2;
+}
+
+#profile {
+    width: 300px;
+    margin: 20px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+}
+
+button {
+    padding: 10px;
+    margin: 5px;
+}
+.hide {
+    display: none;
+}
