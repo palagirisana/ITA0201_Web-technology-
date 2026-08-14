@@ -1,0 +1,19 @@
+body {
+    font-family: Arial;
+    text-align: center;
+    background: #f2f2f2;
+}
+
+#result {
+    width: 400px;
+    margin: 30px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+}
+
+@supports (display: grid) {
+    #result {
+        display: grid;
+    }
+}
