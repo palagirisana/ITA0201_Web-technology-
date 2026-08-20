@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Registration</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #dbeafe, #f3e8ff, #fce7f3);
+            overflow-x: hidden;
+        }
+
+        /* Decorative background */
+        body::before {
+            content: "";
+            position: fixed;
+            width: 250px;
+            height: 250px;
+            background: #8b5cf6;
+            border-radius: 50%;
+            top: -120px;
+            left: -100px;
+            opacity: 0.35;
+        }
+
+        body::after {
+            content: "";
+            position: fixed;
+            width: 280px;
+            height: 280px;
+            background: #38bdf8;
+            border-radius: 50%;
+            bottom: -150px;
+            right: -100px;
+            opacity: 0.3;
+        }
+
+        .main {
+            width: 90%;
+            max-width: 1150px;
+            margin: auto;
+            padding: 40px 0;
+        }
+
+        /* Header */
+
+        .header {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .cap {
+            font-size: 55px;
+            margin-bottom: 5px;
+        }
+
+        .header h1 {
+            font-size: 45px;
+            color: #142d63;
+        }
+
+        .header h1 span {
+            color: #7c3aed;
+        }
+
+        .header p {
+            margin-top: 10px;
+            font-size: 18px;
+            color: #53658a;
+            font-style: italic;
+        }
+
+        /* Main Cards */
+
+        .cards {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.94);
+            border-radius: 25px;
+            padding: 30px;
+            box-shadow: 0 15px 40px rgba(70, 70, 120, 0.15);
+        }
+
+        /* Card Heading */
+
+        .card-title {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .icon-circle {
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #4f46e5, #9333ea);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 27px;
+        }
+
+        .card-title h2 {
+            color: #172554;
+            font-size: 25px;
+        }
+
+        .card-title p {
+            color: #718096;
+            margin-top: 5px;
+        }
+
+        /* Form */
+
+        .input-box {
+            margin-bottom: 17px;
+        }
+
+        .input-box label {
+            display: block;
+            margin-bottom: 7px;
+            color: #334155;
+            font-weight: bold;
+        }
+
+        input,
+        select {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #dbe4f5;
+            border-radius: 12px;
+            font-size: 16px;
+            outline: none;
+            background: #f8faff;
+            transition: 0.3s;
+        }
+
+        input:focus,
+        select:focus {
+            border-color: #7c3aed;
+            box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.1);
+        }
+
+        /* Display Button */
+
+        #displayBtn {
+            width: 100%;
+            padding: 16px;
+            margin-top: 10px;
+            border: none;
+            border-radius: 30px;
+            background: linear-gradient(90deg, #7c3aed, #2563eb);
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        #displayBtn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(79, 70, 229, 0.3);
+        }
+
+        /* Profile */
+
+        #profile {
+            display: none;
+        }
+
+        .profile-card {
+            background: linear-gradient(135deg, #eff6ff, #f5f3ff);
+            border-radius: 18px;
+            padding: 25px;
+            border: 1px solid #dbeafe;
+        }
+
+        .student-avatar {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 20px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #2563eb, #7c3aed);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 50px;
+            color: white;
+        }
+
+        .profile-title {
+            text-align: center;
+            color: #172554;
+            font-size: 25px;
+            margin-bottom: 25px;
+        }
+
+        .detail {
+            display: flex;
+            align-items: center;
+            padding: 14px;
+            margin-bottom: 10px;
+            background: rgba(255, 255, 255, 0.75);
+            border-radius: 10px;
+        }
+
+        .detail-icon {
+            font-size: 23px;
+            width: 45px;
+        }
+
+        .detail-name {
+            color: #475569;
+            width: 140px;
+            font-weight: bold;
+        }
+
+        .detail-value {
+            color: #172554;
+            font-weight: bold;
+        }
+
+        /* Remove Button */
+
+        .remove {
+            width: 100%;
+            padding: 15px;
+            margin-top: 20px;
+            border: none;
+            border-radius: 30px;
+            background: linear-gradient(90deg, #f43f5e, #ef4444);
+            color: white;
+            font-size: 17px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .remove:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(239, 68, 68, 0.25);
+        }
+
+        /* Empty Profile */
+
+        .empty-profile {
+            text-align: center;
+            padding: 80px 20px;
+            color: #64748b;
+        }
+
+        .empty-profile div {
+            font-size: 60px;
+            margin-bottom: 15px;
+        }
+
+        .empty-profile h3 {
+            color: #334155;
+            margin-bottom: 8px;
+        }
+
+        /* Footer */
+
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            color: #64748b;
+            font-style: italic;
+        }
+
+        /* Responsive */
+
+        @media (max-width: 800px) {
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+            .header h1 {
+                font-size: 32px;
+            }
+
+            .main {
+                width: 95%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="main">
+
+    <!-- HEADER -->
+
+    <div class="header">
+
+        <div class="cap">🎓</div>
+
+        <h1>
+            Student <span>Registration</span>
+        </h1>
+
+        <p>Your Future • Our Priority</p>
+
+    </div>
+
+
+    <!-- TWO CARDS -->
+
+    <div class="cards">
+
+        <!-- LEFT CARD -->
+
+        <div class="card">
+
+            <div class="card-title">
+
+                <div class="icon-circle">👤</div>
+
+                <div>
+                    <h2>Enter Your Details</h2>
+                    <p>Fill in the details below</p>
+                </div>
+
+            </div>
+
+
+            <!-- Name -->
+
+            <div class="input-box">
+
+                <label>Student Name</label>
+
+                <input
+                    type="text"
+                    id="name"
+                    placeholder="Enter your name">
+
+            </div>
+
+
+            <!-- Register Number -->
+
+            <div class="input-box">
+
+                <label>Register Number</label>
+
+                <input
+                    type="text"
+                    id="regno"
+                    placeholder="Enter register number">
+
+            </div>
+
+
+            <!-- Department -->
+
+            <div class="input-box">
+
+                <label>Department</label>
+
+                <select id="department">
+
+                    <option value="">
+                        Select Department
+                    </option>
+
+                    <option value="Information Technology">
+                        Information Technology
+                    </option>
+
+                    <option value="Computer Science">
+                        Computer Science
+                    </option>
+
+                    <option value="Electronics and Communication">
+                        Electronics and Communication
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- Year -->
+
+            <div class="input-box">
+
+                <label>Year of Study</label>
+
+                <select id="year">
+
+                    <option value="">
+                        Select Year
+                    </option>
+
+                    <option value="1st Year">
+                        1st Year
+                    </option>
+
+                    <option value="2nd Year">
+                        2nd Year
+                    </option>
+
+                    <option value="3rd Year">
+                        3rd Year
+                    </option>
+
+                    <option value="4th Year">
+                        4th Year
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- Display Button -->
+
+            <button id="displayBtn">
+                👁️ &nbsp; Display Profile
+            </button>
+
+            <div class="footer">
+                "Dream • Learn • Achieve"
+            </div>
+
+        </div>
+
+
+        <!-- RIGHT CARD -->
+
+        <div class="card">
+
+            <div class="card-title">
+
+                <div class="icon-circle">🎓</div>
+
+                <div>
+                    <h2>Student Profile</h2>
+                    <p>Your generated profile</p>
+                </div>
+
+            </div>
+
+
+            <!-- Empty Profile -->
+
+            <div id="emptyProfile" class="empty-profile">
+
+                <div>👨‍🎓</div>
+
+                <h3>No Profile Yet</h3>
+
+                <p>
+                    Enter your details and click
+                    "Display Profile"
+                </p>
+
+            </div>
+
+
+            <!-- Generated Profile -->
+
+            <div id="profile">
+
+                <div class="profile-card">
+
+                    <div class="student-avatar">
+                        👨‍🎓
+                    </div>
+
+                    <h2 class="profile-title">
+                        Student Profile
+                    </h2>
+
+
+                    <div class="detail">
+
+                        <div class="detail-icon">
+                            👤
+                        </div>
+
+                        <div class="detail-name">
+                            Name
+                        </div>
+
+                        <div class="detail-value"
+                             id="profileName">
+                        </div>
+
+                    </div>
+
+
+                    <div class="detail">
+
+                        <div class="detail-icon">
+                            🪪
+                        </div>
+
+                        <div class="detail-name">
+                            Register Number
+                        </div>
+
+                        <div class="detail-value"
+                             id="profileRegno">
+                        </div>
+
+                    </div>
+
+
+                    <div class="detail">
+
+                        <div class="detail-icon">
+                            🎓
+                        </div>
+
+                        <div class="detail-name">
+                            Department
+                        </div>
+
+                        <div class="detail-value"
+                             id="profileDepartment">
+                        </div>
+
+                    </div>
+
+
+                    <div class="detail">
+
+                        <div class="detail-icon">
+                            📅
+                        </div>
+
+                        <div class="detail-name">
+                            Year
+                        </div>
+
+                        <div class="detail-value"
+                             id="profileYear">
+                        </div>
+
+                    </div>
+
+
+                    <button
+                        id="removeBtn"
+                        class="remove">
+
+                        🗑️ &nbsp; Remove Profile
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script>
+
+    // Display Profile
+
+    document.getElementById("displayBtn")
+        .addEventListener("click", function() {
+
+        // Get values using DOM
+
+        let name =
+            document.getElementById("name").value;
+
+        let regno =
+            document.getElementById("regno").value;
+
+        let department =
+            document.getElementById("department").value;
+
+        let year =
+            document.getElementById("year").value;
+
+
+        // Validation
+
+        if (
+            name === "" ||
+            regno === "" ||
+            department === "" ||
+            year === ""
+        ) {
+
+            alert("Please fill all the fields.");
+
+            return;
+        }
+
+
+        // Display values in profile
+
+        document.getElementById("profileName")
+            .textContent = name;
+
+        document.getElementById("profileRegno")
+            .textContent = regno;
+
+        document.getElementById("profileDepartment")
+            .textContent = department;
+
+        document.getElementById("profileYear")
+            .textContent = year;
+
+
+        // Show profile
+
+        document.getElementById("profile")
+            .style.display = "block";
+
+        document.getElementById("emptyProfile")
+            .style.display = "none";
+
+    });
+
+
+    // Remove Profile
+
+    document.getElementById("removeBtn")
+        .addEventListener("click", function() {
+
+        document.getElementById("profile")
+            .style.display = "none";
+
+        document.getElementById("emptyProfile")
+            .style.display = "block";
+
+    });
+
+</script>
+
+</body>
+</html>
