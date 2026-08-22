@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>
+        University Course Enrollment
+    </title>
+
+    <link rel="stylesheet"
+          href="style.css">
+
+</head>
+
+
+<body>
+
+
+<!-- ==========================================
+     NAVBAR
+========================================== -->
+
+<header class="navbar">
+
+    <div class="logo">
+        🎓 University Course Enrollment
+    </div>
+
+
+    <nav class="nav-links">
+
+        <button onclick="goToSection('home')">
+            Home
+        </button>
+
+        <button onclick="goToSection('courses')">
+            Courses
+        </button>
+
+        <button onclick="goToSection('enrollment')">
+            Enrollment
+        </button>
+
+        <button onclick="goToSection('analysis')">
+            Analysis
+        </button>
+
+        <button onclick="goToSection('about')">
+            About
+        </button>
+
+    </nav>
+
+</header>
+
+
+
+<!-- ==========================================
+     HOME
+========================================== -->
+
+<section id="home" class="hero">
+
+    <div class="badge">
+        WEB TECHNOLOGY • UNIT IV
+    </div>
+
+
+    <h1>
+
+        University Course
+
+        <span>
+            Enrollment
+        </span>
+
+        Management
+
+    </h1>
+
+
+    <p>
+
+        Explore and manage university course
+        enrollment using XML, XPath, XSLT
+        and JavaScript.
+
+    </p>
+
+
+    <div class="hero-buttons">
+
+        <button
+            class="primary-btn"
+            onclick="goToSection('courses')">
+
+            View Courses
+
+        </button>
+
+
+        <button
+            class="secondary-btn"
+            onclick="goToSection('analysis')">
+
+            View Analysis
+
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==========================================
+     STATISTICS
+========================================== -->
+
+<section class="stats">
+
+
+    <div class="stat-card">
+
+        <div class="stat-icon">
+            📚
+        </div>
+
+        <div
+            id="totalCourses"
+            class="stat-number">
+
+            0
+
+        </div>
+
+        <div class="stat-label">
+            Total Courses
+        </div>
+
+    </div>
+
+
+
+    <div class="stat-card">
+
+        <div class="stat-icon">
+            👨‍🎓
+        </div>
+
+        <div
+            id="totalStudents"
+            class="stat-number">
+
+            0
+
+        </div>
+
+        <div class="stat-label">
+            Total Students
+        </div>
+
+    </div>
+
+
+
+    <div class="stat-card">
+
+        <div class="stat-icon">
+            📖
+        </div>
+
+        <div
+            id="theoryCourses"
+            class="stat-number">
+
+            0
+
+        </div>
+
+        <div class="stat-label">
+            Theory Courses
+        </div>
+
+    </div>
+
+
+
+    <div class="stat-card">
+
+        <div class="stat-icon">
+            ⭐
+        </div>
+
+        <div
+            id="highestEnrollment"
+            class="stat-number">
+
+            0
+
+        </div>
+
+        <div class="stat-label">
+            Highest Enrollment
+        </div>
+
+    </div>
+
+
+</section>
+
+
+
+<!-- ==========================================
+     COURSES
+========================================== -->
+
+<section id="courses" class="section">
+
+    <h2 class="section-title">
+        Available Courses
+    </h2>
+
+    <p class="section-subtitle">
+
+        Browse the courses and enroll
+        as a student.
+
+    </p>
+
+
+    <div class="course-grid">
+
+
+        <!-- COURSE 1 -->
+
+        <div
+            class="course-card"
+            data-course="CSE101">
+
+            <div class="course-icon">
+                🌐
+            </div>
+
+            <div class="course-code">
+                CSE101
+            </div>
+
+            <h3>
+                Web Technology
+            </h3>
+
+            <span class="course-type">
+                Theory
+            </span>
+
+
+            <div class="course-details">
+
+                <div>
+
+                    <strong>
+                        Credits
+                    </strong>
+
+                    <span>
+                        4
+                    </span>
+
+                </div>
+
+
+                <div>
+
+                    <strong>
+                        Students
+                    </strong>
+
+                    <span class="enrollment-number">
+                        72
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <button
+                class="select-course-btn"
+                onclick="selectCourse('CSE101')">
+
+                Enroll in Course
+
+            </button>
+
+        </div>
+
+
+
+        <!-- COURSE 2 -->
+
+        <div
+            class="course-card"
+            data-course="CSE102">
+
+            <div class="course-icon">
+                🗄️
+            </div>
+
+            <div class="course-code">
+                CSE102
+            </div>
+
+            <h3>
+                Database Management Systems
+            </h3>
+
+            <span class="course-type">
+                Theory
+            </span>
+
+
+            <div class="course-details">
+
+                <div>
+
+                    <strong>
+                        Credits
+                    </strong>
+
+                    <span>
+                        4
+                    </span>
+
+                </div>
+
+
+                <div>
+
+                    <strong>
+                        Students
+                    </strong>
+
+                    <span class="enrollment-number">
+                        65
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <button
+                class="select-course-btn"
+                onclick="selectCourse('CSE102')">
+
+                Enroll in Course
+
+            </button>
+
+        </div>
+
+
+
+        <!-- COURSE 3 -->
+
+        <div
+            class="course-card"
+            data-course="CSE103">
+
+            <div class="course-icon">
+                💻
+            </div>
+
+            <div class="course-code">
+                CSE103
+            </div>
+
+            <h3>
+                Data Structures
+            </h3>
+
+            <span class="course-type">
+                Theory
+            </span>
+
+
+            <div class="course-details">
+
+                <div>
+
+                    <strong>
+                        Credits
+                    </strong>
+
+                    <span>
+                        4
+                    </span>
+
+                </div>
+
+
+                <div>
+
+                    <strong>
+                        Students
+                    </strong>
+
+                    <span class="enrollment-number">
+                        58
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <button
+                class="select-course-btn"
+                onclick="selectCourse('CSE103')">
+
+                Enroll in Course
+
+            </button>
+
+        </div>
+
+
+
+        <!-- COURSE 4 -->
+
+        <div
+            class="course-card"
+            data-course="CSE104">
+
+            <div class="course-icon">
+                🌐
+            </div>
+
+            <div class="course-code">
+                CSE104
+            </div>
+
+            <h3>
+                Computer Networks
+            </h3>
+
+            <span class="course-type">
+                Theory
+            </span>
+
+
+            <div class="course-details">
+
+                <div>
+
+                    <strong>
+                        Credits
+                    </strong>
+
+                    <span>
+                        3
+                    </span>
+
+                </div>
+
+
+                <div>
+
+                    <strong>
+                        Students
+                    </strong>
+
+                    <span class="enrollment-number">
+                        45
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <button
+                class="select-course-btn"
+                onclick="selectCourse('CSE104')">
+
+                Enroll in Course
+
+            </button>
+
+        </div>
+
+
+
+        <!-- COURSE 5 -->
+
+        <div
+            class="course-card"
+            data-course="CSE105">
+
+            <div class="course-icon">
+                🧪
+            </div>
+
+            <div class="course-code">
+                CSE105
+            </div>
+
+            <h3>
+                Web Technology Lab
+            </h3>
+
+            <span class="course-type">
+                Lab
+            </span>
+
+
+            <div class="course-details">
+
+                <div>
+
+                    <strong>
+                        Credits
+                    </strong>
+
+                    <span>
+                        2
+                    </span>
+
+                </div>
+
+
+                <div>
+
+                    <strong>
+                        Students
+                    </strong>
+
+                    <span class="enrollment-number">
+                        32
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <button
+                class="select-course-btn"
+                onclick="selectCourse('CSE105')">
+
+                Enroll in Course
+
+            </button>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- ==========================================
+     ENROLLMENT
+========================================== -->
+
+<section
+    id="enrollment"
+    class="section">
+
+    <h2 class="section-title">
+        Student Enrollment
+    </h2>
+
+    <p class="section-subtitle">
+
+        Enter your details and select
+        a course to enroll.
+
+    </p>
+
+
+    <div class="enrollment-box">
+
+
+        <form onsubmit="enrollStudent(event)">
+
+
+            <div class="form-group">
+
+                <label>
+                    Student Name
+                </label>
+
+                <input
+                    type="text"
+                    id="studentName"
+                    placeholder="Enter student name"
+                    required>
+
+            </div>
+
+
+
+            <div class="form-group">
+
+                <label>
+                    Register Number
+                </label>
+
+                <input
+                    type="text"
+                    id="registerNumber"
+                    placeholder="Enter register number"
+                    required>
+
+            </div>
+
+
+
+            <div class="form-group">
+
+                <label>
+                    Select Course
+                </label>
+
+                <select
+                    id="courseSelect"
+                    required>
+
+                    <option value="">
+                        Select a Course
+                    </option>
+
+                </select>
+
+            </div>
+
+
+
+            <button
+                type="submit"
+                class="enroll-btn">
+
+                Enroll Student
+
+            </button>
+
+
+        </form>
+
+
+
+        <div
+            id="successMessage"
+            class="success-message">
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- ==========================================
+     ANALYSIS
+========================================== -->
+
+<section
+    id="analysis"
+    class="section">
+
+    <h2 class="section-title">
+        Enrollment Analysis
+    </h2>
+
+    <p class="section-subtitle">
+
+        Real-time enrollment statistics
+        for every course.
+
+    </p>
+
+
+    <div
+        class="analysis-box"
+        id="analysisContainer">
+
+    </div>
+
+</section>
+
+
+
+<!-- ==========================================
+     ABOUT
+========================================== -->
+
+<section
+    id="about"
+    class="section">
+
+    <h2 class="section-title">
+        About the Project
+    </h2>
+
+
+    <div class="about-box">
+
+        <p>
+
+            This University Course Enrollment
+            system demonstrates the use of
+            XML for storing course data,
+            XSLT for presenting structured data,
+            XPath for data selection and
+            JavaScript for dynamic enrollment
+            and real-time analysis.
+
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==========================================
+     FOOTER
+========================================== -->
+
+<footer>
+
+    University Course Enrollment © 2026
+
+</footer>
+
+
+
+<script src="script.js"></script>
+
+</body>
+
+</html>

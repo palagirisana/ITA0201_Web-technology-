@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<courses>
+
+    <course>
+        <code>CSE101</code>
+        <name>Web Technology</name>
+        <type>Theory</type>
+        <credits>4</credits>
+        <enrollment>72</enrollment>
+    </course>
+
+    <course>
+        <code>CSE102</code>
+        <name>Database Management Systems</name>
+        <type>Theory</type>
+        <credits>4</credits>
+        <enrollment>65</enrollment>
+    </course>
+
+    <course>
+        <code>CSE103</code>
+        <name>Data Structures</name>
+        <type>Theory</type>
+        <credits>4</credits>
+        <enrollment>58</enrollment>
+    </course>
+
+    <course>
+        <code>CSE104</code>
+        <name>Computer Networks</name>
+        <type>Theory</type>
+        <credits>3</credits>
+        <enrollment>45</enrollment>
+    </course>
+
+    <course>
+        <code>CSE105</code>
+        <name>Web Technology Lab</name>
+        <type>Lab</type>
+        <credits>2</credits>
+        <enrollment>32</enrollment>
+    </course>
+
+</courses>
